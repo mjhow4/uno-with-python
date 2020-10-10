@@ -1,5 +1,7 @@
+import random
+
 NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-COLORS = ["🔴","🟢","🟡","🔵" ]
+COLORS = ["🔵","🟢","🟡","🔴"]
 
 
 class Card:
@@ -8,23 +10,7 @@ class Card:
         self.color = color
 
     def ___str___(self):
-        return f"{self.color} {self.number}"   
+        return f"{self.color} {self.number}"
 
-
-class Player:
-    def __init__(self, name):
-        self.name = name 
-
-
-class Deck:
-    def __init__(self, numbers, colors):
-        self.cards = []
-        for number in numbers:
-            for color in colors:
-                card = (color, number)
-                self.cards.append(card)
-        
-
-
-class Game:
-    pass
+card1 = Card(NUMBERS[0], COLORS[2])
+print(card1.___str___())
