@@ -74,7 +74,7 @@ class Deck:
                         newtoppilecard = p1_card
                         print(p1_card)
                         print(p1_hand)
-                        print(newtoppilecard)
+                        print("The new card at the top of the pile is:", newtoppilecard)
                         break
                     else:
                         print("Please select another card.")
@@ -101,7 +101,7 @@ class Deck:
             else:
                 i += 0
         if i > 0:
-                player2_card = int(input("Please select a card to play (by number from left to right start at 0): "))
+                player2_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
                 while True:
                     if p2_hand[player2_card][0] == newtoppilecard[0] or p2_hand[player2_card][2] == newtoppilecard[2]:
                         print("Great Choice.")
@@ -111,11 +111,11 @@ class Deck:
                         newtoppilecard = p2_card
                         print(p2_card)
                         print(p2_hand)
-                        print(newtoppilecard)
+                        print("The new card at the top of the pile is:", newtoppilecard)
                         break
                     else:
                         print("Please select another card.")
-                        player2_card = int(input("Please select a card to play (by number from left to right start at 0): "))
+                        player2_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
         else:
             print("Please pluck a card from the deck.")
             new_card = a.pop()
@@ -127,6 +127,87 @@ class Deck:
             else:
                 p2_hand.append(new_card)
                 print("Player 2 your hand is now:", p2_hand)
+
+
+        while len(p1_hand) > 0 and len(p2_hand) > 0:
+            print(len(used_deck))
+            print("Card at the tope of the pile is:", newtoppilecard)
+            print("Player 1 it is now your turn!")
+            print("Player 1 your hand is:", p1_hand)
+            i = 0
+            for card in p1_hand:
+                if card[0] == newtoppilecard[0] or card[2] == newtoppilecard[2]:
+                    i += 1
+                else:
+                    i += 0
+            if i > 0:
+                player1_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
+                while True:
+                    if p1_hand[player1_card][0] == newtoppilecard[0] or p1_hand[player1_card][2] == newtoppilecard[2]:
+                        print("Great Choice.")
+                        p1_card = p1_hand[player1_card]
+                        p1_hand.remove(p1_card)
+                        used_deck.append(p1_card)
+                        newtoppilecard = p1_card
+                        print(p1_card)
+                        print(p1_hand)
+                        print("The new card at the top of the pile is:", newtoppilecard)
+                        break
+                    else:
+                        print("Please select another card.")
+                        player1_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
+            else:
+                print("Please pluck a card from the deck.")
+                new_card = a.pop()
+                print("Your new card is:", new_card)
+                if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+                    used_deck.append(new_card)
+                    newtoppilecard = new_card
+                    print("The new card at the top of the pile is: ", newtoppilecard)
+                else:
+                    p1_hand.append(new_card)
+                    print("Player 1 your hand is now:", p1_hand)
+            
+            print(len(used_deck))
+            print("Card at the tope of the pile is:", newtoppilecard)
+            print("Player 2 it is now your turn!")
+            print("Player 2 your hand is:", p2_hand)
+            i = 0
+            for card in p2_hand:
+                if card[0] == newtoppilecard[0] or card[2] == newtoppilecard[2]:
+                    i += 1
+                else:
+                    i += 0
+            if i > 0:
+                player2_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
+                while True:
+                    if p2_hand[player2_card][0] == newtoppilecard[0] or p2_hand[player2_card][2] == newtoppilecard[2]:
+                        print("Great Choice.")
+                        p2_card = p2_hand[player2_card]
+                        p2_hand.remove(p2_card)
+                        used_deck.append(p2_card)
+                        newtoppilecard = p2_card
+                        print(p2_card)
+                        print(p2_hand)
+                        print("The new card at the top of the pile is:", newtoppilecard)
+                        break
+                    else:
+                        print("Please select another card.")
+                        player2_card = int(input("Please select a card to play (by number from left to right starting from 0): "))
+            else:
+                print("Please pluck a card from the deck.")
+                new_card = a.pop()
+                print("Your new card is:", new_card)
+                if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+                    used_deck.append(new_card)
+                    newtoppilecard = new_card
+                    print("The new card at the top of the pile is: ", newtoppilecard)
+                else:
+                    p2_hand.append(new_card)
+                    print("Player 2 your hand is now:", p2_hand)
+        
+           
+
         # return p1_hand
         # return p2_hand
         # return a
