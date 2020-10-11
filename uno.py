@@ -16,7 +16,7 @@ class Card:
 
 class Player:
     def __init__(self, name):
-        self.name = input('Enter your name: ')
+        self.name = name
 
 
 class Deck:
@@ -32,27 +32,41 @@ class Deck:
         random.shuffle(self.cards)
         return str(self.cards)
     
+
+    
     def deal(self):
-        player1 = []
-        player2 = []
+        player1_hand = []
+        player2_hand = []
         self.shuffle()
         i = 0
         while i < 7:
             a = self.cards.pop()
-            player1.append(a)
+            player1_hand.append(a)
             b = self.cards.pop()
-            player2.append(b)
+            player2_hand.append(b)
             i += 1
-        print("Player 1 Hand: ", player1)
-        print("Player 2 Hand: ", player2)
-        print(i)
+        print("Player 1 Hand: ", player1_hand)
+        print("Player 2 Hand: ", player2_hand)
+        print(len(self.cards))
 
-Player()
-deck1 = Deck(NUMBERS, COLORS)
-# a = deck1.cards.pop()
-# print(a)
 
-# print(deck1.shuffle())
+# deck1 = Deck(NUMBERS, COLORS)
+# # a = deck1.cards.pop()
+# # print(a)
 
-print(deck1.deal())
+# # print(deck1.shuffle())
 
+# print(deck1.deal())
+
+def play_game():
+    print("Welcome to Uno!")
+    player1 = input("Player 1 please enter hyour name: ")
+    Player(player1)
+    print("Player 1 is: ", player1.title())
+    player2 = input("Player 2 please enter hyour name: ")
+    Player(player2)
+    print("Player 2 is: ", player2.title())
+    print("Let's Shuffle Up and Play!")
+    deck = Deck(NUMBERS, COLORS)
+    deck.deal()
+play_game()
