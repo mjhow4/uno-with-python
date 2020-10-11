@@ -120,7 +120,7 @@ class Deck:
             print("Please pluck a card from the deck.")
             new_card = a.pop()
             print("Your new card is:", new_card)
-            if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+            if new_card[0] == newtoppilecard[0] or new_card[2] == newtoppilecard[2]:
                 used_deck.append(new_card)
                 newtoppilecard = new_card
                 print("The new card at the top of the pile is: ", newtoppilecard)
@@ -160,7 +160,7 @@ class Deck:
                 print("Please pluck a card from the deck.")
                 new_card = a.pop()
                 print("Your new card is:", new_card)
-                if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+                if new_card[0] == newtoppilecard[0] or new_card[2] == newtoppilecard[2]:
                     used_deck.append(new_card)
                     newtoppilecard = new_card
                     print("The new card at the top of the pile is: ", newtoppilecard)
@@ -198,7 +198,7 @@ class Deck:
                 print("Please pluck a card from the deck.")
                 new_card = a.pop()
                 print("Your new card is:", new_card)
-                if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+                if new_card[0] == newtoppilecard[0] or new_card[2] == newtoppilecard[2]:
                     used_deck.append(new_card)
                     newtoppilecard = new_card
                     print("The new card at the top of the pile is: ", newtoppilecard)
