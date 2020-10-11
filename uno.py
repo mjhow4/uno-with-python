@@ -81,6 +81,15 @@ class Deck:
                         player1_card = int(input("Please select a card to play (by number from left to right start at 0): "))
         else:
             print("Please pluck a card from the deck.")
+            new_card = a.pop()
+            print("Your new card is:", new_card)
+            if new_card[0] == first_card[0] or new_card[2] == first_card[2]:
+                used_deck.append(new_card)
+                newtoppilecard = new_card
+                print("The new card at the top of the pile is: ", newtoppilecard)
+            else:
+                p1_hand.append(new_card)
+                print("Player 1 your hand is now:", p1_hand)
         # return p1_hand
         # return p2_hand
         # return a
