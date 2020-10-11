@@ -91,7 +91,7 @@ class Deck:
                 p1_hand.append(new_card)
                 print("Player 1 your hand is now:", p1_hand)
         print(len(used_deck))
-        print("Card at the tope of the pile is:", newtoppilecard)
+        print("Card at the top of the pile is:", newtoppilecard)
         print("Player 2 it is now your turn!")
         print("Player 2 your hand is:", p2_hand)
         i = 0
@@ -131,7 +131,7 @@ class Deck:
 
         while len(p1_hand) > 0 and len(p2_hand) > 0:
             print(len(used_deck))
-            print("Card at the tope of the pile is:", newtoppilecard)
+            print("Card at the top of the pile is:", newtoppilecard)
             print("Player 1 it is now your turn!")
             print("Player 1 your hand is:", p1_hand)
             i = 0
@@ -169,7 +169,7 @@ class Deck:
                     print("Player 1 your hand is now:", p1_hand)
             
             print(len(used_deck))
-            print("Card at the tope of the pile is:", newtoppilecard)
+            print("Card at the top of the pile is:", newtoppilecard)
             print("Player 2 it is now your turn!")
             print("Player 2 your hand is:", p2_hand)
             i = 0
@@ -205,6 +205,23 @@ class Deck:
                 else:
                     p2_hand.append(new_card)
                     print("Player 2 your hand is now:", p2_hand)
+            
+            print(len(a))
+            if len(a) == 0:
+                 a = random.shuffle(used_deck)
+            else:
+                a = a
+
+
+        if len(p1_hand) == 0 and len(p2_hand) > 0:
+            print("Player 1 is the Winner!")
+        else:
+            print("Player 2 is the Winner!")
+        ask_to_play_again = input("Would you like to Play Again? (y or n): ")
+        if ask_to_play_again.upper() == "Y":
+            play_game()
+        else:
+            print("Had Fun, See Ya Next Time!")
         
            
 
